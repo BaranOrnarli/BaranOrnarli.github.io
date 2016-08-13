@@ -13,17 +13,25 @@
     <title>Cover Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="components/bootstrap.min.css" rel="stylesheet">    
-    <link rel="stylesheet" href="components/custom.min.css">
 
     <link rel="stylesheet" href="components/reveal.css">
-    <link rel="stylesheet" href="components/black.css" id="theme">
+    <link rel="stylesheet" href="components/black.css" id="theme"> 
+    <link href="components/bootstrap.min.css" rel="stylesheet">   
+    <link rel="stylesheet" href="components/custom.min.css">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <!--<link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">-->
 
     <!-- Custom styles for this template -->
     <link href="components/cover.css" rel="stylesheet">
+    <style type="text/css">
+        .reveal sup {
+            font-size: 0.5em;
+            color: #AAA;
+        }
+    </style>
+    
+    <script src="bower_components/moment/min/moment.min.js"></script>
   </head>
 
   <body>
@@ -62,15 +70,38 @@
     </div>
 
 
-    <div class="container-fluid">
-        <div class="row col-xs-12">
-            <div class="reveal">
-            <div class="slides">
-                <section>Slide 1</section>
-                <section>Slide 2</section>
-            </div>
-            </div>
-        </div>
+    <div class="reveal">
+    <div class="slides">
+        <section><p>Baran Ornarli is a software architect with expertise in Software Engineering, cyber security, and web apps.</p>
+            <p style="text-align:center;"><small>Use right arrow key to continue</small></p>
+            <p>
+            <span class="fragment">I started working professionally <script>var date1 = moment("20090610", "YYYYMMDD").fromNow();
+                document.write(date1);</script>.</span></p>
+        </section>
+        <section><h2>Software Engineering Expertise</h2>
+            <table>
+                <thead>
+                    <th>Language Expertise</th>
+                    <th>Frameworks</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>C/C++, Python, Javascript, Java, Typescript, PHP, C#</td>
+                        <td><a href="https://angularjs.org/">AngularJS</a>, <a href="http://aurelia.io/">Aurelia</a>, <a href="http://flask.pocoo.org/">Flask</a>, <a href="http://sparkjava.com/">Spark2</a>, jQuery, MVC5, Drupal, Qt<sup>desktop</sup>, Win32 API<sup>desktop</sup>, kivy<sup>mobile</sup>, OpenLayers<sup>GIS</sup>, Leaflet<sup>GIS</sup></td>
+                    </tr>                    
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+        </section>
+        <section>
+            <p>The main expertise and experiences over the years has been Python, Javascript, Java, C#. </p>
+            <p>I am a full-stack engineer that has desgined web apps including layout, front-end, back-end.</p>
+        </section>
+    </div>
     </div>
 
     <!-- Bootstrap core JavaScript
@@ -78,9 +109,24 @@
 
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script src="components/lib/js/head.min.js"></script>
     <script src="components/reveal.js"></script>
     <script>
-        Reveal.initialize();
+        Reveal.initialize({
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'components/plugin/markdown/marked.js' },
+					{ src: 'components/plugin/markdown/markdown.js' },
+					{ src: 'components/plugin/notes/notes.js', async: true },
+					{ src: 'components/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
     </script>
   </body>
 </html>
