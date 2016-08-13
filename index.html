@@ -9,8 +9,10 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="assets/favicon.ico">
+    <link rel="icon" type="image/png" href="assets/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="assets/favicon-16x16.png" sizes="16x16" />
 
-    <title>Cover Template for Bootstrap</title>
+    <title>Baran Ornarli</title>
 
     <!-- Bootstrap core CSS -->
 
@@ -28,17 +30,17 @@
         .reveal sup {
             font-size: 0.5em;
             color: #AAA;
-        }
+        }.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
     </style>
     
     <script src="bower_components/moment/min/moment.min.js"></script>
   </head>
 
-  <body>
+  <body ng-App="BaranOrnarliApp" ng-controller="InitCtrl">
     <div class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
-          <a href="#" class="navbar-brand">BaranOrnarli.com</a>
+          <h1 style="line-height: 18px; font-size: 20px; margin: 0"><a href="#" class="navbar-brand">Baran Ornarli</a></h1>
           <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -47,24 +49,29 @@
         </div>
         <div class="navbar-collapse collapse" id="navbar-main">
           <ul class="nav navbar-nav">
-            <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Menu <span class="caret"></span></a>
-              <ul class="dropdown-menu" aria-labelledby="themes">
-                <li><a href="../default/">Default</a></li>
+            <li class="dropdown"uib-dropdown is-open="status.isopen">
+              <a class="dropdown-toggle" href="#" id="themes" uib-dropdown-toggle ng-disabled="disabled">Menu <span class="caret"></span></a>
+              <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="themes">
+                <li role="menuitem"><a href="#contact">Contact</a></li>
                 <li class="divider"></li>
-                <li><a href="../cerulean/">Cerulean</a></li>
-                <li><a href="../cosmo/">Cosmo</a></li>
+                <li role="menuitem"><a href="#resume">Resume</a></li>
+                <li role="menuitem"><a href="http://www.infernodevelopment.com/user/BaranOrnarli/submissions">Software Articles on ID</a></li>
+                <li role="menuitem"><a href="http://www.linkedin.com/in/baranOrnarli">LinkedIn</a></li>
               </ul>
             </li>
             <li>
-              <a href="#">Help</a>
+              <a href="#" uib-popover-template="popover.html" uib-popover-placement="bottom-right" uib-popover="" popover-title="Help">Help</a>
             </li>
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
             <li></li>
           </ul>
-
+            <script type="text/ng-template" id="popover.html">
+                <div>What did you need assistance with?</div>
+                <div class="form-group">
+                </div>
+            </script>
         </div>
       </div>
     </div>
@@ -72,12 +79,13 @@
 
     <div class="reveal">
     <div class="slides">
-        <section><p>Baran Ornarli is a software architect with expertise in Software Engineering, cyber security, and web apps.</p>
+        <section><p>Baran Ornarli is a full-stack software architect with expertise in Software Engineering, cyber security, and web apps.</p>
             <p style="text-align:center;"><small>Use right arrow key to continue</small></p>
             <p>
-            <span class="fragment"><img src="https://avatars0.githubusercontent.com/u/3249915?v=3&s=460" style="width: 150px; opacity: 0.7; filter: alpha(opacity=70);" /><br/></span>
-            <span class="fragment">I started working professionally <script>var date1 = moment("20090610", "YYYYMMDD").fromNow();
-                document.write(date1);</script>.</span></p>
+            <span class="fragment"><img src="https://avatars0.githubusercontent.com/u/3249915?v=3&s=150" style="width: 150px; opacity: 0.7; filter: alpha(opacity=70);" /><br/></span>
+            <span class="fragment">Professional Experience: <script>var date1 = moment("20090610", "YYYYMMDD").fromNow();
+                document.write(date1.split(' ago')[0]);</script></span></p>
+            <p class="fragment">Currently working as a Software Architect & Lead Technologist at Booz Allen Hamilton, Inc.</p>
         </section>
         <section><h2>Software Engineering Expertise</h2>
             <table>
@@ -87,8 +95,8 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>C/C++, Python, Javascript, Java, Typescript, PHP, C#</td>
-                        <td><a href="https://angularjs.org/">AngularJS</a>, <a href="http://aurelia.io/">Aurelia</a>, <a href="http://flask.pocoo.org/">Flask</a>, <a href="http://sparkjava.com/">Spark2</a>, jQuery, MVC5, Drupal, Qt<sup>desktop</sup>, Win32 API<sup>desktop</sup>, kivy<sup>mobile</sup>, OpenLayers<sup>GIS</sup>, Leaflet<sup>GIS</sup></td>
+                        <td>C/C++, Python<sup>2/3</sup>, Javascript, Java<sup>8</sup>, Typescript, PHP, C#</td>
+                        <td><a href="https://angularjs.org/">AngularJS<sup>1/2</sup></a>, <a href="http://aurelia.io/">Aurelia<sup>1</sup></a>, <a href="http://flask.pocoo.org/">Flask<sup>0.11</sup></a>, <a href="http://sparkjava.com/">Spark<sup>2</sup></a>, jQuery<sup>1/2</sup>, jQuery UI, MVC5, Drupal, Angular Bootstrap<sup>front-end</sup>, Qt<sup>desktop</sup>, Win32 API<sup>desktop</sup>, kivy<sup>mobile</sup>, OpenLayers<sup>GIS</sup>, Leaflet<sup>GIS</sup></td>
                     </tr>                    
                     <tr>
                         <td></td>
@@ -115,8 +123,7 @@
             </table>
         </section>
         <section><h2>Experience</h2>
-            <p>The main expertise and experiences over the years has been Python, Javascript, Java, C#. I've developed numerous projects with Python Flask, jQuery, AngularJS, C# ASP.net MVC5, and PHP Drupal.</p>
-            <p class="fragment">I am a full-stack engineer that has desgined web apps including front-end and back-end engineering.</p>
+            <p>The main expertise and experiences over the years has been Python, Javascript, Java, C#. I've developed numerous projects with Python Flask, jQuery, AngularJS, MVC<sup>C#</sup>, and PHP Drupal.</p>
             <p class="fragment">I have a Bachelor of Science in Computer Engineering from Virginia Tech. I'm a Certified Ethical Hacker.</p>
         </section>
     </div>
@@ -129,6 +136,7 @@
     <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
     <script src="components/lib/js/head.min.js"></script>
     <script src="components/reveal.js"></script>
+    <script src="components/BaranApp.js"></script>
     <script>
         Reveal.initialize({
 				progress: true,
