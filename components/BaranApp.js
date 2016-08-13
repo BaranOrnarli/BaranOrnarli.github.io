@@ -1,5 +1,5 @@
 
-var InitCtrl = function InitCtrl ($scope, $log, $uibModal) {
+var InitCtrl = function InitCtrl ($scope, $log, $uibModal, $sce) {
   $scope.items = [
     'The first choice!',
     'And another choice for you.',
@@ -22,7 +22,6 @@ var InitCtrl = function InitCtrl ($scope, $log, $uibModal) {
     $scope.status.isopen = !$scope.status.isopen;
     $log.log("Finishing toggle: ", open);
   };
-
   $scope.open = function () {
 
     var modalInstance = $uibModal.open({
@@ -55,5 +54,5 @@ var ModalInstanceCtrl = function ($scope, $uibModalInstance) {
 
 var app = angular.module('BaranOrnarliApp', ['ui.bootstrap', 'ngAnimate']);
 
-app.controller('InitCtrl', ['$scope', '$log', '$uibModal', InitCtrl]);
+app.controller('InitCtrl', ['$scope', '$log', '$uibModal', '$sce', InitCtrl]);
 app.controller('ModalInstanceCtrl', ['$scope', '$uibModalInstance', ModalInstanceCtrl]);
