@@ -1,10 +1,5 @@
 
-var InitCtrl = function InitCtrl ($scope, $log, $uibModal, $sce) {
-  $scope.items = [
-    'The first choice!',
-    'And another choice for you.',
-    'but wait! A third!'
-  ];
+var InitCtrl = function InitCtrl ($scope, $log, $uibModal) {
 
   $scope.status = {
     isopen: false
@@ -16,12 +11,11 @@ var InitCtrl = function InitCtrl ($scope, $log, $uibModal, $sce) {
   $scope.animationsEnabled = true;
 
   $scope.toggleDropdown = function($event) {
-    $log.log("Testing toggle: ", open);
     $event.preventDefault();
     $event.stopPropagation();
     $scope.status.isopen = !$scope.status.isopen;
-    $log.log("Finishing toggle: ", open);
   };
+
   $scope.open = function () {
 
     var modalInstance = $uibModal.open({
@@ -29,12 +23,6 @@ var InitCtrl = function InitCtrl ($scope, $log, $uibModal, $sce) {
       templateUrl: 'modal.html',
       size: 'lg',
       controller: 'ModalInstanceCtrl'
-    });
-
-    modalInstance.result.then(function () {
-        $log.info('Modal result at: ' + new Date());
-    }, function () {
-      $log.info('Modal dismissed at: ' + new Date());
     });
   };
 
@@ -55,5 +43,5 @@ var ModalInstanceCtrl = function ($scope, $uibModalInstance) {
 
 var app = angular.module('BaranOrnarliApp', ['ui.bootstrap', 'ngAnimate']);
 
-app.controller('InitCtrl', ['$scope', '$log', '$uibModal', '$sce', InitCtrl]);
+app.controller('InitCtrl', ['$scope', '$log', '$uibModal', InitCtrl]);
 app.controller('ModalInstanceCtrl', ['$scope', '$uibModalInstance', ModalInstanceCtrl]);
