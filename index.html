@@ -60,18 +60,13 @@
               </ul>
             </li>
             <li>
-              <a href="#" uib-popover-template="popover.html" uib-popover-placement="bottom-right" uib-popover="" popover-title="Help">Help</a>
+              <a href="#" ng-click="open()">Help</a>
             </li>
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
             <li></li>
           </ul>
-            <script type="text/ng-template" id="popover.html">
-                <div>What did you need assistance with?</div>
-                <div class="form-group">
-                </div>
-            </script>
         </div>
       </div>
     </div>
@@ -133,6 +128,7 @@
     ================================================== -->
 
     <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
     <script src="components/lib/js/head.min.js"></script>
     <script src="components/reveal.js"></script>
