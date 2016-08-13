@@ -27,7 +27,7 @@ var InitCtrl = function InitCtrl ($scope, $log, $uibModal) {
 
     var modalInstance = $uibModal.open({
       animation: $scope.animationsEnabled,
-      templateUrl: 'modal.html',
+      templateUrl: '../modal.html',
       controller: 'ModalInstanceCtrl'
     });
 
